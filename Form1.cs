@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +12,14 @@ namespace FitnessTrackers
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        string Username;
+         public Form1(string username)
         {
             InitializeComponent();
+            Username = username;
+
+            string result = "Selamat datang kembali, " + Username + "!";
+            label2.Text = result;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -52,7 +57,7 @@ namespace FitnessTrackers
 
         private void label2_Click(object sender, EventArgs e)
         {
-
+          
         }
     }
 }

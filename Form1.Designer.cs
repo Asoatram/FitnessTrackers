@@ -81,9 +81,8 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(292, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(188, 16);
+            this.label2.Size = new System.Drawing.Size(0, 16);
             this.label2.TabIndex = 4;
-            this.label2.Text = "Selamat datang kembali, user!";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // Form1

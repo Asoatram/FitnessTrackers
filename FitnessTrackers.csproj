@@ -91,7 +91,7 @@
     <Compile Include="Form5.Designer.cs">
       <DependentUpon>Form5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Jadwal_Harian.cs">
+    <Compile Include="Koneksi.cs">
       <Generator>MSBuild:Compile</Generator>
     </Compile>
     <Compile Include="Program.cs" />

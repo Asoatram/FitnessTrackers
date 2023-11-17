@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using bebas;
 
 
 namespace FitnessTrackers
@@ -19,8 +20,10 @@ namespace FitnessTrackers
             InitializeComponent();
 
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-8NDBEQP7\SQLEXPRESS;Initial Catalog=Account;Integrated Security=True");
-        private void label2_Click(object sender, EventArgs e)
+        Koneksi Conn = new Koneksi();
+            
+
+private void label2_Click(object sender, EventArgs e)
         {
 
         }
@@ -39,43 +42,47 @@ namespace FitnessTrackers
         {
             string Username = textBox1.Text;
             string Password = textBox2.Text;
-            try
-            {
-                string querry = "SELECT * FROM userLogin NEW WHERE Userid= '" + Username +"' AND Password = '" + Password+"'";
-                SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
 
-                DataTable dTable = new DataTable();
-                sda.Fill(dTable);
-
-                if(dTable.Rows.Count > 0 )
+                SqlConnection conn = Conn.GetConn();
+                try
                 {
-                    Username = textBox1.Text;
-                    Password = textBox2.Text;
+                    conn.Open();
+                    string querry = "SELECT * FROM UserInfo NEW WHERE UserId= '" + Username + "' AND Password = '" + Password + "'";
+                    SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
 
-                    Form1 f1 = new Form1(Username);
-                    f1.ShowDialog();
-                    if (f1.DialogResult == DialogResult.OK)
+                    DataTable dTable = new DataTable();
+                    sda.Fill(dTable);
+
+                    if (dTable.Rows.Count > 0)
                     {
+                        Username = textBox1.Text;
+                        Password = textBox2.Text;
 
+                        Form1 f1 = new Form1(Username);
+                        f1.ShowDialog();
+                        if (f1.DialogResult == DialogResult.OK)
+                        {
+
+                        }
+
+                        this.Close();
                     }
-
-                    this.Close();
+                    else
+                    {
+                        MessageBox.Show("Invalid Login Details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        textBox1.Clear();
+                        textBox2.Clear();
+                    }
                 }
-                else
+                catch
                 {
-                 MessageBox.Show("Invalid Login Details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    textBox1.Clear();
-                    textBox2.Clear();
+                    MessageBox.Show("Error");
+
                 }
-            }
-            catch {
-                MessageBox.Show("Error");
-            
-            }
-            finally
-            {
-                conn.Close();
-            }
+                finally
+                {
+                    conn.Close();
+                }
         }
     }
 }

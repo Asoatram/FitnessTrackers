@@ -84,5 +84,15 @@ private void label2_Click(object sender, EventArgs e)
                     conn.Close();
                 }
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Form f6 = new Form6();
+            f6.ShowDialog();
+            if (f6.DialogResult == DialogResult.OK)
+            {
+
+            }
+        }
     }
 }

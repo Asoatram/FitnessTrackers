@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using bebas;
+using System.Security.Policy;
 
 
 namespace FitnessTrackers
@@ -93,6 +94,16 @@ private void label2_Click(object sender, EventArgs e)
             {
 
             }
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+
+        {
+            int x = 10;
+            int y = 10;
+            int size = 50;
+            e.Graphics.FillRectangle(Brushes.Blue, x, y, size, size);
+
         }
     }
 }

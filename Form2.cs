@@ -7,14 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace FitnessTrackers
 {
     public partial class Form2 : Form
     {
-        public Form2()
+        string user;
+        public Form2(string username)
         {
             InitializeComponent();
+            user = username;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -33,6 +36,27 @@ namespace FitnessTrackers
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form f1 = new Form1(user);
+            f1.ShowDialog();
+            if (f1.DialogResult == DialogResult.OK)
+            {
+
+            }
+            
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
         }

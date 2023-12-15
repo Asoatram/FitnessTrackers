@@ -29,7 +29,7 @@ namespace FitnessTrackers
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form f2 = new Form2();
+            Form f2 = new Form2(Username);
             f2.ShowDialog();
             if(f2.DialogResult == DialogResult.OK)
             {
@@ -59,5 +59,6 @@ namespace FitnessTrackers
         {
           
         }
+
     }
 }

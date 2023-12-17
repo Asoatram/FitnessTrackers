@@ -33,6 +33,7 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
+            this.uniqueButtons1 = new FitnessTrackers.UniqueButtons();
             this.SuspendLayout();
             // 
             // label1
@@ -85,11 +86,30 @@
             this.label2.TabIndex = 4;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
+            // uniqueButtons1
+            // 
+            this.uniqueButtons1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.uniqueButtons1.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.uniqueButtons1.BorderRadius = 20;
+            this.uniqueButtons1.BorderSize = 0;
+            this.uniqueButtons1.FlatAppearance.BorderSize = 0;
+            this.uniqueButtons1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uniqueButtons1.ForeColor = System.Drawing.Color.White;
+            this.uniqueButtons1.Location = new System.Drawing.Point(632, 187);
+            this.uniqueButtons1.Name = "uniqueButtons1";
+            this.uniqueButtons1.Size = new System.Drawing.Size(156, 71);
+            this.uniqueButtons1.TabIndex = 5;
+            this.uniqueButtons1.Text = "uniqueButtons1";
+            this.uniqueButtons1.TextColor = System.Drawing.Color.White;
+            this.uniqueButtons1.UseVisualStyleBackColor = false;
+            this.uniqueButtons1.Click += new System.EventHandler(this.uniqueButtons1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.uniqueButtons1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -109,6 +129,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Label label2;
+        private UniqueButtons uniqueButtons1;
     }
 }
 

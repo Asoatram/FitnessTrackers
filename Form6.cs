@@ -10,24 +10,39 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using bebas;
 using System.Windows.Input;
+using System.Drawing.Text;
 
 namespace FitnessTrackers
 {
-    class UserId
-    {
-        public string Id { get; set; }
-        public string Pass { get; set; }
-        public UserId(string Id, string Pass) { 
-            this.Id = Id;
-            this.Pass = Pass;  
-        }
-
-    }
+    
     public partial class Form6 : Form
     {
+        private PrivateFontCollection privateFontCollection = new PrivateFontCollection();
         public Form6()
         {
             InitializeComponent();
+            LoadCustomFont("DMSans-VariableFont_opsz,wght.ttf");
+            richTextBox1.Font = new Font(privateFontCollection.Families[0], 13f, FontStyle.Bold);
+            label3.Font = new Font(privateFontCollection.Families[0], 15f, FontStyle.Bold);
+            label3.ForeColor = Color.FromArgb(255, 200, 245, 96);
+            uniqueButtons1.BackColor = Color.FromArgb(255, 200, 245, 96);
+            uniqueButtons1.Font = new Font(privateFontCollection.Families[0], 10f, FontStyle.Bold);
+            label4.Font = new Font(privateFontCollection.Families[0], 15f, FontStyle.Bold);
+            label5.Font = new Font(privateFontCollection.Families[0], 15f, FontStyle.Bold);
+            label6.Font = new Font(privateFontCollection.Families[0], 15f, FontStyle.Bold);
+            label7.Font = new Font(privateFontCollection.Families[0], 15f, FontStyle.Bold);
+        }
+        private void LoadCustomFont(string fontFileName)
+        {
+            // Load the custom font into the PrivateFontCollection
+            try
+            {
+                privateFontCollection.AddFontFile(fontFileName);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error loading custom font: {ex.Message}");
+            }
         }
         Koneksi Conn = new Koneksi();
 
@@ -51,11 +66,10 @@ namespace FitnessTrackers
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void uniqueButtons1_Click(object sender, EventArgs e)
         {
-            UserId user = new UserId(textBox1.Text, textBox2.Text);
-            string username = user.Id;
-            string password = user.Pass;
+            string username = textBox1.Text;
+            string password = textBox2.Text;
             SqlConnection conn = Conn.GetConn();
             SqlCommand command = new SqlCommand("INSERT INTO UserInfo (UserId,  Password) VALUES (@UserId, @Password)", conn);
             command.Parameters.AddWithValue("@UserId", username);
@@ -69,6 +83,16 @@ namespace FitnessTrackers
             {
 
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

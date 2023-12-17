@@ -12,12 +12,35 @@ namespace FitnessTrackers
 {
     public partial class Form1 : Form
     {
-        public Form1()
+        string Username;
+        Image imagePic;
+         public Form1(string username)
         {
             InitializeComponent();
-        }
+            Username = username;
 
-        private void label1_Click(object sender, EventArgs e)
+            string result = "Selamat datang kembali, " + Username + "!";
+            label2.Text = result;
+            
+        }
+        private void LoadImage()
+        {
+            try
+            {
+                // Specify the path to your image file
+                string imagePath = @"C:\Users\Lenovo\source\repos\Asoatram\FitnessTrackers\Resources\20230209002158_IMG_44581.png";
+
+                // Load the image from the file
+                Image imagePic = Image.FromFile(imagePath);
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error loading image: " + ex.Message);
+            }
+        }
+            private void label1_Click(object sender, EventArgs e)
         {
 
         }
@@ -53,6 +76,21 @@ namespace FitnessTrackers
         private void label2_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Form f7 = new Form7();
+            f7.ShowDialog();
+            if (f7.DialogResult == DialogResult.OK)
+            {
+
+            }
         }
     }
 }

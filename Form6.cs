@@ -11,6 +11,8 @@ using System.Data.SqlClient;
 using bebas;
 using System.Windows.Input;
 using System.Drawing.Text;
+using MongoDB.Driver;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.ListView;
 
 namespace FitnessTrackers
 {
@@ -18,9 +20,12 @@ namespace FitnessTrackers
     public partial class Form6 : Form
     {
         private PrivateFontCollection privateFontCollection = new PrivateFontCollection();
+        private IMongoCollection<User> userCollection;
+
         public Form6()
         {
             InitializeComponent();
+            InitializeMongoDB();
             LoadCustomFont("DMSans-VariableFont_opsz,wght.ttf");
             richTextBox1.Font = new Font(privateFontCollection.Families[0], 13f, FontStyle.Bold);
             label3.Font = new Font(privateFontCollection.Families[0], 15f, FontStyle.Bold);
@@ -31,6 +36,11 @@ namespace FitnessTrackers
             label5.Font = new Font(privateFontCollection.Families[0], 15f, FontStyle.Bold);
             label6.Font = new Font(privateFontCollection.Families[0], 15f, FontStyle.Bold);
             label7.Font = new Font(privateFontCollection.Families[0], 15f, FontStyle.Bold);
+        }
+
+        private void InitializeMongoDB()
+        {
+            userCollection = MongoDBHelper.GetDatabase().GetCollection<User>("Users");
         }
         private void LoadCustomFont(string fontFileName)
         {
@@ -44,7 +54,6 @@ namespace FitnessTrackers
                 MessageBox.Show($"Error loading custom font: {ex.Message}");
             }
         }
-        Koneksi Conn = new Koneksi();
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
@@ -70,21 +79,27 @@ namespace FitnessTrackers
         {
             string username = textBox1.Text;
             string password = textBox2.Text;
-            SqlConnection conn = Conn.GetConn();
-            SqlCommand command = new SqlCommand("INSERT INTO UserInfo (UserId,  Password) VALUES (@UserId, @Password)", conn);
-            command.Parameters.AddWithValue("@UserId", username);
-            command.Parameters.AddWithValue("@Password", password);
-            conn.Open();
-            command.ExecuteNonQuery();
-            conn.Close();
-            Form f1 = new Form1(username);
+            if (userCollection.Find(u => u.Username == username).Any())
+            {
+                MessageBox.Show("Username or email already exists. Please choose a different one.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            User newUser = new User();
+            newUser.Username =  username;
+            newUser.Password = password;
+
+            userCollection.InsertOne(newUser);
+
+            MessageBox.Show("Registration successful!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            Form1 f1 = new Form1(username, newUser);
             f1.ShowDialog();
             if (f1.DialogResult == DialogResult.OK)
             {
 
             }
-        }
 
+
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 

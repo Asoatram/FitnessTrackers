@@ -11,6 +11,7 @@ using System.ComponentModel;
 
 namespace FitnessTrackers
 {
+    [ToolboxItem(true)]
     internal class UniqueButtons : Button
     {
 

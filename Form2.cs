@@ -13,13 +13,11 @@ namespace FitnessTrackers
 {
     public partial class Form2 : Form
     {
-        string userName;
-        User user;
-        public Form2(string username, User users)
+        string user;
+        public Form2(string username)
         {
             InitializeComponent();
-            user = users;
-            userName = username;
+            user = username;
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -44,7 +42,7 @@ namespace FitnessTrackers
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form f1 = new Form1(userName, user );
+            Form f1 = new Form1(user);
             f1.ShowDialog();
             if (f1.DialogResult == DialogResult.OK)
             {

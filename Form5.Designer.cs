@@ -44,8 +44,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.exitButton1 = new FitnessTrackers.Resources.ExitButton();
-            this.minimizeButton1 = new FitnessTrackers.Resources.MinimizeButton();
             this.roundedPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -100,7 +98,7 @@
             this.uniqueButtons2.FlatAppearance.BorderSize = 0;
             this.uniqueButtons2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.uniqueButtons2.ForeColor = System.Drawing.Color.Black;
-            this.uniqueButtons2.Location = new System.Drawing.Point(211, 285);
+            this.uniqueButtons2.Location = new System.Drawing.Point(215, 288);
             this.uniqueButtons2.Name = "uniqueButtons2";
             this.uniqueButtons2.Size = new System.Drawing.Size(149, 48);
             this.uniqueButtons2.TabIndex = 9;
@@ -213,7 +211,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::FitnessTrackers.Properties.Resources.Mask_group;
-            this.pictureBox4.Location = new System.Drawing.Point(217, 374);
+            this.pictureBox4.Location = new System.Drawing.Point(177, 373);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(286, 294);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -287,30 +285,12 @@
             this.label7.Text = "Tracked";
             this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
-            // exitButton1
-            // 
-            this.exitButton1.BackColor = System.Drawing.Color.Transparent;
-            this.exitButton1.Location = new System.Drawing.Point(1013, 12);
-            this.exitButton1.Name = "exitButton1";
-            this.exitButton1.Size = new System.Drawing.Size(50, 50);
-            this.exitButton1.TabIndex = 21;
-            // 
-            // minimizeButton1
-            // 
-            this.minimizeButton1.BackColor = System.Drawing.Color.Transparent;
-            this.minimizeButton1.Location = new System.Drawing.Point(957, 12);
-            this.minimizeButton1.Name = "minimizeButton1";
-            this.minimizeButton1.Size = new System.Drawing.Size(50, 50);
-            this.minimizeButton1.TabIndex = 22;
-            // 
             // Form5
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1075, 637);
-            this.Controls.Add(this.minimizeButton1);
-            this.Controls.Add(this.exitButton1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -354,7 +334,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
-        private Resources.ExitButton exitButton1;
-        private Resources.MinimizeButton minimizeButton1;
     }
 }

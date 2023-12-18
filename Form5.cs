@@ -13,8 +13,6 @@ using System.Security.Policy;
 using System.Drawing.Text;
 using MongoDB.Bson;
 using MongoDB.Driver;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
-using System.Runtime.CompilerServices;
 
 
 
@@ -23,12 +21,10 @@ namespace FitnessTrackers
     public partial class Form5 : Form
     {
         private PrivateFontCollection privateFontCollection = new PrivateFontCollection();
-        private IMongoCollection<User> userCollection;
 
         public Form5()
         {
             InitializeComponent();
-            InitializeMongoDB();
             this.BackColor = Color.FromArgb(255, 33, 37, 31);
             uniqueButtons1.BackColor = Color.FromArgb(255, 200,245, 96);
             uniqueButtons2.BackColor = Color.FromArgb(255, 37, 37, 37);
@@ -54,10 +50,6 @@ namespace FitnessTrackers
             label3.Font = new Font(privateFontCollection.Families[0], 10f, FontStyle.Bold);
             CreateColorfulLabel();
 
-        }
-        private void InitializeMongoDB()
-        {
-            userCollection = MongoDBHelper.GetDatabase().GetCollection<User>("Users");
         }
         private void CreateColorfulLabel()
         {
@@ -106,6 +98,7 @@ namespace FitnessTrackers
                 MessageBox.Show($"Error loading custom font: {ex.Message}");
             }
         }
+        Koneksi Conn = new Koneksi();
             
 
 private void label2_Click(object sender, EventArgs e)
@@ -125,30 +118,24 @@ private void label2_Click(object sender, EventArgs e)
 
         private void uniqueButtons1_Click(object sender, EventArgs e)
         {
-            string username = rjTextBox1.Texts;
-            string password = rjTextBox2.Texts;
-            Image Profilepic;
-            try
+            string Username = rjTextBox1.Texts;
+            string Password = rjTextBox2.Texts;
+
+                SqlConnection conn = Conn.GetConn();
+                try
                 {
-                var user = userCollection.Find(u => u.Username == username && u.Password == password).FirstOrDefault();
+                    conn.Open();
+                    string querry = "SELECT * FROM UserInfo NEW WHERE UserId= '" + Username + "' AND Password = '" + Password + "'";
+                    SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
 
+                    DataTable dTable = new DataTable();
+                    sda.Fill(dTable);
 
-                if (user != null)
-
-                {
-                    try
+                    if (dTable.Rows.Count > 0)
                     {
-                        Profilepic = ImageConverter.ConvertBytesToImage(user.Profile);
-                        pictureBox1.Image = Profilepic;
-                    }
-                    catch (ArgumentException ex)
-                    {
-                        MessageBox.Show("Invalid profile picture format.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                    username = rjTextBox1.Texts;
-                        password = rjTextBox2.Texts;
-                        Form1 f1 = new Form1(username, user);
+                        Username = rjTextBox1.Texts;
+                        Password = rjTextBox2.Texts;
+                        Form1 f1 = new Form1(Username);
                         f1.ShowDialog();
 
                         if (f1.DialogResult == DialogResult.OK)
@@ -166,11 +153,12 @@ private void label2_Click(object sender, EventArgs e)
                 }
                 catch
                 {
-                    MessageBox.Show("Error Because Of pic");
+                    MessageBox.Show("Error");
 
                 }
                 finally
                 {
+                    conn.Close();
                 }
         }
 

@@ -21,7 +21,7 @@ namespace FitnessTrackers
         public FormProfile(String username,User users)
         {
             InitializeComponent();
-            mongoDBHandler = new MongoDBHelper("mongodb://localhost:27017", "UserInfo");
+            mongoDBHandler = new MongoDBHelper();
             currentUser = users;
             this.username = username;
             LoadUserProfile();

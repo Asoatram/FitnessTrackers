@@ -23,6 +23,25 @@ namespace FitnessTrackers
 
         [BsonElement("Profile")]
         public byte[] Profile { get; set; }
+
+        [BsonElement("TargetWeight")]
+        public int TargetWeight { get; set; }
+        [BsonElement("Height")]
+        public int Height { get; set; }
+        [BsonElement("Weight")]
+        public int Weight { get; set; }
+        [BsonElement("EXP")]
+        public int EXP { get; set; }
+        [BsonElement("LastFitnessTime")]
+        public DateTime LastFitnessTime { get; set; }
+        [BsonElement("CheckBox1")]
+        public bool CheckBox1 { get; set; }
+
+        [BsonElement("CheckBox2")]
+        public bool CheckBox2 { get; set; }
+
+
+
     }
 
 }

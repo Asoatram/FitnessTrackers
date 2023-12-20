@@ -15,7 +15,7 @@ namespace FitnessTrackers
 
         public ChatroomMongoDBHandler(string connectionString, string databaseName)
         {
-            var client = new MongoClient(connectionString);
+            var client = new MongoClient();
             database = client.GetDatabase(databaseName);
             messageCollection = database.GetCollection<ChatMessage>("ChatMessages");
 

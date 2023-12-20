@@ -27,7 +27,7 @@ namespace FitnessTrackers
         public Form7(string username, User user)
         {
             InitializeComponent();
-            mongoDBHandler = new ChatroomMongoDBHandler("mongodb://localhost:27017", "UserInfo");
+            mongoDBHandler = new ChatroomMongoDBHandler("mongodb+srv://Asoatram:XMhspfgYNdBJeJUF@cluster0.px122pi.mongodb.net/\r\n\r\n", "Cluster0");
             currentUser = user;
             Username = username;
             LoadChatHistory();

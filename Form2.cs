@@ -1,4 +1,5 @@
-﻿using System;
+﻿using bebas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,11 +16,13 @@ namespace FitnessTrackers
     {
         string userName;
         User user;
+        private readonly MongoDBHelper mongoDBhandler;
         public Form2(string username, User users)
         {
             InitializeComponent();
             user = users;
             userName = username;
+            mongoDBhandler = new MongoDBHelper();
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -61,6 +64,16 @@ namespace FitnessTrackers
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void uniqueButtons1_Click(object sender, EventArgs e)
+        {
+            mongoDBhandler.UpdateTargetPlan(user.Username, "Weight Loss");
+        }
+
+        private void uniqueButtons2_Click(object sender, EventArgs e)
+        {
+            mongoDBhandler.UpdateTargetPlan(user.Username, "Muscle Gain");
         }
     }
 }

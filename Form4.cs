@@ -1,4 +1,5 @@
-﻿using System;
+﻿using bebas;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +15,14 @@ namespace FitnessTrackers
 {
     public partial class Form4 : Form
     {
-        public Form4()
+
+        User user;
+        private readonly MongoDBHelper MongoDBHandler;
+        public Form4(User users)
         {
             InitializeComponent();
+            user = users;
+            MongoDBHandler = new MongoDBHelper();
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,9 +43,9 @@ namespace FitnessTrackers
 
         private void button1_Click(object sender, EventArgs e)
         {
-            float Height = float.Parse(textBox1.Text);
-            float Weight = float.Parse(textBox2.Text);
-            Height /= 100;
+            int Height = int.Parse(textBox1.Text);
+            int Weight = int.Parse(textBox2.Text);
+            int TargetWeight = int.Parse(textBox3.Text);
 
             float BMI = (Weight)/(Height *Height);
             if (BMI < 18.5)
@@ -61,6 +67,7 @@ namespace FitnessTrackers
             {
                 MessageBox.Show($"You are severely obese \nYour calculated body mass index: {BMI}");
             }
+            MongoDBHandler.UpdateHeightWeight(user.Username, Height, Weight, TargetWeight);
         }
     }
 }

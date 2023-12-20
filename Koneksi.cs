@@ -124,7 +124,14 @@ namespace bebas
 
         }
 
+        public void UpdateTargetPlan(string userId, string targetPlan)
+        {
+            var userFilter = Builders<User>.Filter.Eq(u => u.Username, userId);
+            var update_targetplan = Builders<User>.Update.Set(u => u.TargetPlan, targetPlan);
 
+            userCollection.UpdateOne(userFilter, update_targetplan);
+
+        }
 
     }
 }

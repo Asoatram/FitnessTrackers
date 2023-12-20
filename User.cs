@@ -40,6 +40,8 @@ namespace FitnessTrackers
         [BsonElement("CheckBox2")]
         public bool CheckBox2 { get; set; }
 
+        [BsonElement("TargetPlan")]
+        public string TargetPlan { get; set; }
 
 
     }

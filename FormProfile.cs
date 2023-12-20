@@ -31,7 +31,7 @@ namespace FitnessTrackers
             if (currentUser != null)
             {
                 // Display user information
-                label1.Text = $"Welcome, {currentUser.Username}";
+                
 
                 // Display profile picture if available
                 if (currentUser.Profile != null && currentUser.Profile.Length > 0)

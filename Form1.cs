@@ -28,6 +28,8 @@ namespace FitnessTrackers
             users = user;
             InitializeComponent();
             Username = username;
+            checkBox1.ForeColor = Color.White;
+            checkBox2.ForeColor = Color.White;
             label2.Font = new Font(privateFontCollection.Families[0], 12f, FontStyle.Bold);
             label3.Font = new Font(privateFontCollection.Families[0], 12f, FontStyle.Bold);
             label4.Font = new Font(privateFontCollection.Families[0], 12f, FontStyle.Bold);
@@ -65,6 +67,8 @@ namespace FitnessTrackers
                 checkBox1.Checked = false;
                 checkBox2.CheckState = CheckState.Unchecked;
                 checkBox1.Enabled = true;
+                checkBox1.ForeColor = Color.White;
+                checkBox2.ForeColor = Color.White;
             }
             else
             {
@@ -72,12 +76,16 @@ namespace FitnessTrackers
                 mongoDBHandler.UpdateCheckBox2(users.Username, true);
                 checkBox1.CheckState = CheckState.Checked;
                 checkBox1.Enabled = false;
+                checkBox1.ForeColor = Color.White;
+                checkBox2.ForeColor = Color.White;
             }
             if (users.CheckBox2 == false)
             {
                 checkBox2.Checked = false;
                 checkBox2.CheckState = CheckState.Unchecked;
                 checkBox2.Enabled = true;
+                checkBox1.ForeColor = Color.White;
+                checkBox2.ForeColor = Color.White;
             }
             else
             {
@@ -85,6 +93,8 @@ namespace FitnessTrackers
                 mongoDBHandler.UpdateCheckBox2(users.Username, true);
                 checkBox2.CheckState = CheckState.Checked;
                 checkBox2.Enabled = false;
+                checkBox1.ForeColor = Color.White;
+                checkBox2.ForeColor = Color.White;
             }
             DateTime today = DateTime.Today;
 
@@ -95,11 +105,24 @@ namespace FitnessTrackers
                 bool check2 = checkBox2.Checked;
                 mongoDBHandler.UpdateCheckBox1(users.Username, check1);
                 mongoDBHandler.UpdateCheckBox2(users.Username, check2);
+                checkBox1.ForeColor = Color.White;
+                checkBox2.ForeColor = Color.White;
 
             }
             int Level;
             Level = users.EXP / 100;
             label12.Text = $"Level {Level}";
+            UpdatePlan();
+           
+        }
+
+        private void UpdatePlan()
+        {
+            if(users.TargetPlan == "Muscle Gain")
+            {
+                label11.Text = "- Squat: 4 sets x 8-12 reps\r\n\r\n- Deadlift: 4 sets x 8-12 reps\r\n\r\n- Bench press: 4 sets x 8-12 reps\r\n\r\n- Pull-up: 4 sets x 8-12 reps\r\n\r\n- Shoulder press: 3 sets x 10-15 reps";
+                label31.Text = "- Leg press: 4 sets x 12-15 reps\r\n\r\n- Lunges: 3 sets x 12-15 reps per leg\r\n\r\n- Cable flyes: 3 sets x 12-15 reps\r\n\r\n- Bent-over rows: 4 sets x 12-15 reps\r\n\r\n- Bicep curls: 3 sets x 12-15 reps\r\n\r\n- Tricep dips: 3 sets x 12-15 reps";
+            }
         }
         private void LoadCustomFont(string fontFileName)
         {
@@ -158,7 +181,7 @@ namespace FitnessTrackers
 
             }
         }
-        private void uniqueButtons2_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
             Form f3 = new Form3();
             f3.ShowDialog();
@@ -169,7 +192,7 @@ namespace FitnessTrackers
         }
         private void uniqueButtons3_Click(object sender, EventArgs e)
         {
-            Form f4 = new Form4();
+            Form f4 = new Form4(users);
             f4.ShowDialog();
             if (f4.DialogResult == DialogResult.OK)
             {
@@ -204,7 +227,7 @@ namespace FitnessTrackers
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void uniqueButtons2_Click(object sender, EventArgs e)
         {
             Form f8 = new FormProfile(Username, users);
             f8.ShowDialog();
@@ -342,6 +365,71 @@ namespace FitnessTrackers
         }
 
         private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label23_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void roundedPanel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label29_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label33_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label11_Click(object sender, EventArgs e)
         {
 
         }

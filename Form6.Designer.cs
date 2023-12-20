@@ -35,14 +35,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.roundedPanel1 = new FitnessTrackers.Resources.RoundedPanel();
-            this.uniqueButtons1 = new FitnessTrackers.UniqueButtons();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.roundedPanel1 = new FitnessTrackers.Resources.RoundedPanel();
+            this.uniqueButtons1 = new FitnessTrackers.UniqueButtons();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.minimizeButton1 = new FitnessTrackers.Resources.MinimizeButton();
+            this.exitButton1 = new FitnessTrackers.Resources.ExitButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -121,6 +123,55 @@
             this.pictureBox2.TabIndex = 20;
             this.pictureBox2.TabStop = false;
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(98)))), ((int)(((byte)(250)))));
+            this.label7.Location = new System.Drawing.Point(786, 364);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(111, 29);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Tracked";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(786, 335);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(68, 29);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Stay";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(786, 306);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(68, 29);
+            this.label4.TabIndex = 21;
+            this.label4.Text = "Stay";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(855, 309);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(44, 29);
+            this.label5.TabIndex = 22;
+            this.label5.Text = "Fit";
+            // 
             // roundedPanel1
             // 
             this.roundedPanel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
@@ -175,54 +226,21 @@
             this.label2.Text = "Password";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label7
+            // minimizeButton1
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(98)))), ((int)(((byte)(250)))));
-            this.label7.Location = new System.Drawing.Point(786, 364);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 29);
-            this.label7.TabIndex = 24;
-            this.label7.Text = "Tracked";
+            this.minimizeButton1.BackColor = System.Drawing.Color.Transparent;
+            this.minimizeButton1.Location = new System.Drawing.Point(957, -1);
+            this.minimizeButton1.Name = "minimizeButton1";
+            this.minimizeButton1.Size = new System.Drawing.Size(50, 50);
+            this.minimizeButton1.TabIndex = 25;
             // 
-            // label6
+            // exitButton1
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(786, 335);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(68, 29);
-            this.label6.TabIndex = 23;
-            this.label6.Text = "Stay";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(786, 306);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 29);
-            this.label4.TabIndex = 21;
-            this.label4.Text = "Stay";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(156)))), ((int)(((byte)(255)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(855, 309);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(44, 29);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Fit";
+            this.exitButton1.BackColor = System.Drawing.Color.Transparent;
+            this.exitButton1.Location = new System.Drawing.Point(1013, -1);
+            this.exitButton1.Name = "exitButton1";
+            this.exitButton1.Size = new System.Drawing.Size(50, 50);
+            this.exitButton1.TabIndex = 26;
             // 
             // Form6
             // 
@@ -230,6 +248,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(37)))), ((int)(((byte)(31)))));
             this.ClientSize = new System.Drawing.Size(1075, 637);
+            this.Controls.Add(this.exitButton1);
+            this.Controls.Add(this.minimizeButton1);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label4);
@@ -272,5 +292,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private Resources.MinimizeButton minimizeButton1;
+        private Resources.ExitButton exitButton1;
     }
 }

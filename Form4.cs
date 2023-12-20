@@ -1,4 +1,6 @@
-﻿using System;
+﻿using bebas;
+using MongoDB.Driver.Core.Misc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,9 +16,14 @@ namespace FitnessTrackers
 {
     public partial class Form4 : Form
     {
-        public Form4()
+        private readonly MongoDBHelper mongoDBHandler;
+        User currentUser;
+        public Form4(User user)
         {
+            this.currentUser = user;
+            this.mongoDBHandler = new MongoDBHelper();
             InitializeComponent();
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -37,30 +44,12 @@ namespace FitnessTrackers
 
         private void button1_Click(object sender, EventArgs e)
         {
-            float Height = float.Parse(textBox1.Text);
-            float Weight = float.Parse(textBox2.Text);
-            Height /= 100;
+            int Weight = int.Parse(textBox2.Text);
+            int Height = int.Parse(textBox1.Text);
+            int TargetWeight= int.Parse(textBox3.Text);
 
-            float BMI = (Weight)/(Height *Height);
-            if (BMI < 18.5)
-            {
-                MessageBox.Show($"You are severely underweight \nYour calculated body mass index: {BMI}");
-            } else if(BMI >= 18.5 && BMI < 25)
-            {
-                MessageBox.Show($"You have a normal bodyweight \nYour calculated body mass index: {BMI}");
-            }
-            else if (BMI >= 25.1 && BMI < 29.9)
-            {
-                MessageBox.Show($"You are overweight \nYour calculated body mass index: {BMI}");
-            }
-            else if (BMI >= 29.9 && BMI < 34.9)
-            {
-                MessageBox.Show($"You are obese \nYour calculated body mass index: {BMI}");
-            }
-            else if (BMI >= 34.9)
-            {
-                MessageBox.Show($"You are severely obese \nYour calculated body mass index: {BMI}");
-            }
+            mongoDBHandler.UpdateHeightWeight(currentUser.Username, Height, Weight, TargetWeight);
+
         }
     }
 }

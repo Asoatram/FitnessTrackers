@@ -30,7 +30,6 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.button5 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -53,14 +52,10 @@
             this.minimizeButton1 = new FitnessTrackers.Resources.MinimizeButton();
             this.exitButton1 = new FitnessTrackers.Resources.ExitButton();
             this.roundedPanel4 = new FitnessTrackers.Resources.RoundedPanel();
-            this.label28 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
@@ -75,6 +70,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.uniqueButtons5 = new FitnessTrackers.UniqueButtons();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -111,17 +107,6 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Halo";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(69, 183);
-            this.button5.Margin = new System.Windows.Forms.Padding(2);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(82, 19);
-            this.button5.TabIndex = 8;
-            this.button5.Text = "Diet Menu";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // pictureBox1
             // 
@@ -444,14 +429,10 @@
             // 
             this.roundedPanel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(37)))));
             this.roundedPanel4.BorderColor = System.Drawing.Color.White;
-            this.roundedPanel4.Controls.Add(this.label28);
-            this.roundedPanel4.Controls.Add(this.label27);
+            this.roundedPanel4.Controls.Add(this.label14);
+            this.roundedPanel4.Controls.Add(this.label13);
             this.roundedPanel4.Controls.Add(this.label26);
-            this.roundedPanel4.Controls.Add(this.label25);
-            this.roundedPanel4.Controls.Add(this.label24);
             this.roundedPanel4.Controls.Add(this.label23);
-            this.roundedPanel4.Controls.Add(this.label22);
-            this.roundedPanel4.Controls.Add(this.label21);
             this.roundedPanel4.Controls.Add(this.label20);
             this.roundedPanel4.Controls.Add(this.label19);
             this.roundedPanel4.Controls.Add(this.label18);
@@ -464,105 +445,62 @@
             this.roundedPanel4.Size = new System.Drawing.Size(205, 461);
             this.roundedPanel4.TabIndex = 0;
             // 
-            // label28
+            // label14
             // 
-            this.label28.AutoSize = true;
-            this.label28.ForeColor = System.Drawing.Color.White;
-            this.label28.Location = new System.Drawing.Point(35, 372);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(135, 13);
-            this.label28.TabIndex = 12;
-            this.label28.Text = "- Sup Sayuran dan Kacang";
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.White;
+            this.label14.Location = new System.Drawing.Point(27, 357);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(0, 13);
+            this.label14.TabIndex = 12;
             // 
-            // label27
+            // label13
             // 
-            this.label27.AutoSize = true;
-            this.label27.ForeColor = System.Drawing.Color.White;
-            this.label27.Location = new System.Drawing.Point(35, 347);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(129, 13);
-            this.label27.TabIndex = 11;
-            this.label27.Text = "- Tumis Sayuran dan Tofu";
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.White;
+            this.label13.Location = new System.Drawing.Point(16, 340);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(0, 13);
+            this.label13.TabIndex = 11;
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.ForeColor = System.Drawing.Color.White;
-            this.label26.Location = new System.Drawing.Point(35, 321);
+            this.label26.Location = new System.Drawing.Point(27, 265);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(86, 13);
+            this.label26.Size = new System.Drawing.Size(135, 65);
             this.label26.TabIndex = 10;
-            this.label26.Text = "- Ikan Panggang";
+            this.label26.Text = "- Ikan Panggang\r\n\r\n- Tumis Sayuran dan Tofu\r\n\r\n- Sup Sayuran dan Kacang";
             this.label26.Click += new System.EventHandler(this.label26_Click);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.ForeColor = System.Drawing.Color.White;
-            this.label25.Location = new System.Drawing.Point(35, 263);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(91, 13);
-            this.label25.TabIndex = 9;
-            this.label25.Text = "- Sandwich Sehat";
-            this.label25.Click += new System.EventHandler(this.label25_Click);
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.ForeColor = System.Drawing.Color.White;
-            this.label24.Location = new System.Drawing.Point(35, 233);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(73, 13);
-            this.label24.TabIndex = 8;
-            this.label24.Text = "- Quinoa Bowl";
             // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.ForeColor = System.Drawing.Color.White;
-            this.label23.Location = new System.Drawing.Point(35, 204);
+            this.label23.Location = new System.Drawing.Point(26, 170);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(76, 13);
+            this.label23.Size = new System.Drawing.Size(91, 65);
             this.label23.TabIndex = 7;
-            this.label23.Text = "- Salad Protein";
+            this.label23.Text = "- Salad Protein\r\n\r\n- Quinoa Bowl\r\n\r\n- Sandwich Sehat";
             this.label23.Click += new System.EventHandler(this.label23_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.ForeColor = System.Drawing.Color.White;
-            this.label22.Location = new System.Drawing.Point(35, 141);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(89, 13);
-            this.label22.TabIndex = 6;
-            this.label22.Text = "- Smoothie Nutrisi";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.ForeColor = System.Drawing.Color.White;
-            this.label21.Location = new System.Drawing.Point(35, 114);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(100, 13);
-            this.label21.TabIndex = 5;
-            this.label21.Text = "- Telur dan Sayuran";
             // 
             // label20
             // 
             this.label20.AutoSize = true;
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(34, 87);
+            this.label20.Location = new System.Drawing.Point(26, 74);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(78, 13);
+            this.label20.Size = new System.Drawing.Size(100, 65);
             this.label20.TabIndex = 4;
-            this.label20.Text = "- Oatmeal Bowl";
+            this.label20.Text = "- Oatmeal Bowl\r\n\r\n- Telur dan Sayuran\r\n\r\n- Smoothie Nutrisi";
             this.label20.Click += new System.EventHandler(this.label20_Click);
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.ForeColor = System.Drawing.Color.White;
-            this.label19.Location = new System.Drawing.Point(24, 302);
+            this.label19.Location = new System.Drawing.Point(16, 248);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(38, 13);
             this.label19.TabIndex = 3;
@@ -573,7 +511,7 @@
             // 
             this.label18.AutoSize = true;
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(24, 179);
+            this.label18.Location = new System.Drawing.Point(16, 154);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(37, 13);
             this.label18.TabIndex = 2;
@@ -584,7 +522,7 @@
             // 
             this.label17.AutoSize = true;
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(24, 65);
+            this.label17.Location = new System.Drawing.Point(16, 57);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(52, 13);
             this.label17.TabIndex = 1;
@@ -619,7 +557,7 @@
             this.roundedPanel1.Location = new System.Drawing.Point(248, 277);
             this.roundedPanel1.Margin = new System.Windows.Forms.Padding(2);
             this.roundedPanel1.Name = "roundedPanel1";
-            this.roundedPanel1.Size = new System.Drawing.Size(268, 248);
+            this.roundedPanel1.Size = new System.Drawing.Size(263, 248);
             this.roundedPanel1.TabIndex = 9;
             this.roundedPanel1.Paint += new System.Windows.Forms.PaintEventHandler(this.roundedPanel1_Paint);
             // 
@@ -656,7 +594,7 @@
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(81)))), ((int)(((byte)(92)))));
-            this.label8.Location = new System.Drawing.Point(206, 170);
+            this.label8.Location = new System.Drawing.Point(184, 170);
             this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 13);
@@ -668,7 +606,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(78)))), ((int)(((byte)(81)))), ((int)(((byte)(92)))));
-            this.label7.Location = new System.Drawing.Point(113, 170);
+            this.label7.Location = new System.Drawing.Point(102, 170);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(41, 13);
@@ -702,7 +640,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(113, 193);
+            this.label4.Location = new System.Drawing.Point(102, 193);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(35, 13);
@@ -713,7 +651,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(206, 193);
+            this.label3.Location = new System.Drawing.Point(184, 193);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(35, 13);
@@ -721,12 +659,34 @@
             this.label3.Text = "label3";
             this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
+            // uniqueButtons5
+            // 
+            this.uniqueButtons5.BackColor = System.Drawing.Color.Transparent;
+            this.uniqueButtons5.BackgroundColor = System.Drawing.Color.Transparent;
+            this.uniqueButtons5.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.uniqueButtons5.BorderRadius = 20;
+            this.uniqueButtons5.BorderSize = 0;
+            this.uniqueButtons5.FlatAppearance.BorderSize = 0;
+            this.uniqueButtons5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.uniqueButtons5.ForeColor = System.Drawing.Color.White;
+            this.uniqueButtons5.Location = new System.Drawing.Point(61, 169);
+            this.uniqueButtons5.Name = "uniqueButtons5";
+            this.uniqueButtons5.Size = new System.Drawing.Size(110, 30);
+            this.uniqueButtons5.TabIndex = 26;
+            this.uniqueButtons5.Text = "Diet Menu";
+            this.uniqueButtons5.TextColor = System.Drawing.Color.White;
+            this.uniqueButtons5.UseVisualStyleBackColor = false;
+            this.uniqueButtons5.Click += new System.EventHandler(this.uniqueButtons5_Click);
+            this.uniqueButtons5.MouseEnter += new System.EventHandler(this.uniqueButtons5_MouseEnter);
+            this.uniqueButtons5.MouseLeave += new System.EventHandler(this.uniqueButtons5_MouseLeave);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(30)))), ((int)(((byte)(29)))));
             this.ClientSize = new System.Drawing.Size(1056, 560);
+            this.Controls.Add(this.uniqueButtons5);
             this.Controls.Add(this.roundedPanel3);
             this.Controls.Add(this.roundedPanel2);
             this.Controls.Add(this.uniqueButtons4);
@@ -737,7 +697,6 @@
             this.Controls.Add(this.exitButton1);
             this.Controls.Add(this.roundedPanel4);
             this.Controls.Add(this.roundedPanel1);
-            this.Controls.Add(this.button5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -774,7 +733,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button5;
         private Resources.RoundedPanel roundedPanel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -806,17 +764,14 @@
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Label label21;
-        private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label20;
+        private UniqueButtons uniqueButtons5;
     }
 }

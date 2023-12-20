@@ -122,6 +122,11 @@ namespace FitnessTrackers
             {
                 label11.Text = "- Squat: 4 sets x 8-12 reps\r\n\r\n- Deadlift: 4 sets x 8-12 reps\r\n\r\n- Bench press: 4 sets x 8-12 reps\r\n\r\n- Pull-up: 4 sets x 8-12 reps\r\n\r\n- Shoulder press: 3 sets x 10-15 reps";
                 label31.Text = "- Leg press: 4 sets x 12-15 reps\r\n\r\n- Lunges: 3 sets x 12-15 reps per leg\r\n\r\n- Cable flyes: 3 sets x 12-15 reps\r\n\r\n- Bent-over rows: 4 sets x 12-15 reps\r\n\r\n- Bicep curls: 3 sets x 12-15 reps\r\n\r\n- Tricep dips: 3 sets x 12-15 reps";
+                label20.Text = "- Oatmeal Protein Bowl\r\n\r\n- Telur dan Sayuran ";
+                label23.Text = "- Ayam Panggang Quinoa Bowl\r\n\r\n- Ikan Bakar dan Kentang Manis ";
+                label26.Text = "- Grilled Beef dan Kentang Tumbuk\r\n\r\n- Tofu dan Sayuran Stir-Fry ";
+                label13.Text = "Snack";
+                label14.Text = "- Smoothie Protein\r\n\r\n- Kacang Almond atau Pistachio\r\n\r\n- Yogurt Greek";
             }
         }
         private void LoadCustomFont(string fontFileName)
@@ -181,7 +186,7 @@ namespace FitnessTrackers
 
             }
         }
-        private void button5_Click(object sender, EventArgs e)
+        private void uniqueButtons5_Click(object sender, EventArgs e)
         {
             Form f3 = new Form3();
             f3.ShowDialog();
@@ -432,6 +437,22 @@ namespace FitnessTrackers
         private void label11_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void uniqueButtons5_MouseEnter(object sender, EventArgs e)
+        {
+           uniqueButtons5.BackColor = Color.FromArgb(255, 200, 245, 96);
+           uniqueButtons5.ForeColor = Color.FromArgb(255, 120, 98, 248);
+        }
+
+        private void uniqueButtons5_MouseLeave(object sender, EventArgs e)
+        {
+            uniqueButtons5.BackColor = Color.Transparent;
+            uniqueButtons5.ForeColor = Color.FromArgb(255, 255, 255, 255);
         }
     }
 }

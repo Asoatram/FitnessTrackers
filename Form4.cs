@@ -47,7 +47,10 @@ namespace FitnessTrackers
             int Weight = int.Parse(textBox2.Text);
             int TargetWeight = int.Parse(textBox3.Text);
 
-            float BMI = (Weight)/(Height *Height);
+            float HeightF = float.Parse(textBox1.Text);
+            HeightF /= 100;
+
+            float BMI = (Weight)/(HeightF *HeightF);
             if (BMI < 18.5)
             {
                 MessageBox.Show($"You are severely underweight \nYour calculated body mass index: {BMI}");

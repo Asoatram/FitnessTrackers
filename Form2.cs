@@ -75,5 +75,10 @@ namespace FitnessTrackers
         {
             mongoDBhandler.UpdateTargetPlan(user.Username, "Muscle Gain");
         }
+
+        private void Form2_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

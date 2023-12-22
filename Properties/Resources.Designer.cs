@@ -63,9 +63,60 @@ namespace FitnessTrackers.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Adhere_To_Physical_Exercise_PNG_Images___Vector_Material__Fitness_Coach__Happy_Weekend_PNG_Transparent_Background___Pngtree_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("Adhere_To_Physical_Exercise_PNG_Images___Vector_Material__Fitness_Coach__Happy_We" +
+                        "ekend_PNG_Transparent_Background_-_Pngtree-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap c5c3453101c2f129e6295cb82af0fc4c_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("c5c3453101c2f129e6295cb82af0fc4c-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap foto_profil {
             get {
                 object obj = ResourceManager.GetObject("foto profil", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Group_118 {
+            get {
+                object obj = ResourceManager.GetObject("Group 118", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Group_120 {
+            get {
+                object obj = ResourceManager.GetObject("Group 120", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Group_121 {
+            get {
+                object obj = ResourceManager.GetObject("Group 121", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +187,16 @@ namespace FitnessTrackers.Properties {
         internal static System.Drawing.Bitmap Vector {
             get {
                 object obj = ResourceManager.GetObject("Vector", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Vector1 {
+            get {
+                object obj = ResourceManager.GetObject("Vector1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

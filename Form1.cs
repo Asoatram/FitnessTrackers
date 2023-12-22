@@ -184,15 +184,7 @@ namespace FitnessTrackers
 
             }
         }
-        private void uniqueButtons5_Click(object sender, EventArgs e)
-        {
-            Form f3 = new Form3();
-            f3.ShowDialog();
-            if (f3.DialogResult == DialogResult.OK)
-            {
-
-            }
-        }
+       
         private void uniqueButtons3_Click(object sender, EventArgs e)
         {
             Form f4 = new Form4(users);
@@ -441,17 +433,7 @@ namespace FitnessTrackers
         {
 
         }
-        private void uniqueButtons5_MouseEnter(object sender, EventArgs e)
-        {
-           uniqueButtons5.BackColor = Color.FromArgb(255, 200, 245, 96);
-           uniqueButtons5.ForeColor = Color.FromArgb(255, 120, 98, 248);
-        }
-
-        private void uniqueButtons5_MouseLeave(object sender, EventArgs e)
-        {
-            uniqueButtons5.BackColor = Color.Transparent;
-            uniqueButtons5.ForeColor = Color.FromArgb(255, 255, 255, 255);
-        }
+       
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {

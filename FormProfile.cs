@@ -63,6 +63,35 @@ namespace FitnessTrackers
         {
 
         }
+
+        private void uniqueButtons1_Click(object sender, EventArgs e)
+        {
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "Image files (*.png)|*.png;|All files (*.*)|*.*";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedFilePath = openFileDialog.FileName;
+
+                    // Upload profile picture to MongoDB
+                    mongoDBHandler.UploadProfilePicture(currentUser.Username, selectedFilePath);
+
+                    // Reload user profile to display the updated picture
+                    LoadUserProfile();
+                }
+            }
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormProfile_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

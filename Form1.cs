@@ -101,10 +101,8 @@ namespace FitnessTrackers
 
             if (users.LastFitnessTime.Day != today.Day)
             {
-                bool check1 = checkBox1.Checked;
-                bool check2 = checkBox2.Checked;
-                mongoDBHandler.UpdateCheckBox1(users.Username, check1);
-                mongoDBHandler.UpdateCheckBox2(users.Username, check2);
+                mongoDBHandler.UpdateCheckBox1(users.Username, false);
+                mongoDBHandler.UpdateCheckBox2(users.Username, false);
                 checkBox1.ForeColor = Color.White;
                 checkBox2.ForeColor = Color.White;
 
@@ -339,7 +337,7 @@ namespace FitnessTrackers
             lastFitness = lastFitness.AddDays(1);
 
             mongoDBHandler.UpdateLastFitness(users.Username, lastFitness);
-            if (users.CheckBox1 == false)
+            if (checkBox2.Checked && !users.CheckBox2)
             {
                 mongoDBHandler.UpdateEXP(users.Username, users.EXP + 50);
             }
@@ -352,7 +350,7 @@ namespace FitnessTrackers
 
             DateTime lastFitness = DateTime.Today;
             lastFitness = lastFitness.AddDays(1);
-            if (users.CheckBox2 == false)
+            if (checkBox2.Checked && !users.CheckBox2)
             {
                 mongoDBHandler.UpdateEXP(users.Username, users.EXP + 50);
             }
@@ -453,6 +451,16 @@ namespace FitnessTrackers
         {
             uniqueButtons5.BackColor = Color.Transparent;
             uniqueButtons5.ForeColor = Color.FromArgb(255, 255, 255, 255);
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

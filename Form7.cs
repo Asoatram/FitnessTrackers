@@ -23,6 +23,7 @@ namespace FitnessTrackers
         private User currentUser;
         string Username;
         private readonly ChatroomMongoDBHandler mongoDBHandler;
+        
 
         public Form7(string username, User user)
         {
@@ -30,19 +31,33 @@ namespace FitnessTrackers
             mongoDBHandler = new ChatroomMongoDBHandler("mongodb+srv://Asoatram:XMhspfgYNdBJeJUF@cluster0.px122pi.mongodb.net/\r\n\r\n", "Cluster0");
             currentUser = user;
             Username = username;
-            LoadChatHistory();
+            LoadChatHistory(0);
+            updateTimer.Interval = 1000;
+
+        }
+
+        private void updateTimer_Tick(object sender, EventArgs e)
+        {
+            int currentTopIndex = listBox1.TopIndex;
+
+            listBox1.Items.Clear();
+            LoadChatHistory(currentTopIndex);
+
         }
         private void InitializeMongoDB()
         {
             userCollection = MongoDBHelper.GetUserCollection();
         }
-        private void LoadChatHistory()
+        private void LoadChatHistory(int currentTopIndex)
         {
+
             var chatHistory = mongoDBHandler.GetChatHistory();
             foreach (var message in chatHistory)
             {
                 listBox1.Items.Add($"{message.Sender}: {message.Content}");
             }
+            listBox1.TopIndex = currentTopIndex;
+
         }
 
         private void uniqueButtons1_Click(object sender, EventArgs e)
@@ -68,8 +83,19 @@ namespace FitnessTrackers
             // Clear the message input
             rjTextBox1.Texts = "";
         }
-    
-        
+
+        private void Form7_Load(object sender, EventArgs e)
+        {
+            // Start the timer when the form is loaded
+            updateTimer.Start();
+        }
+
+        private void Form7_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            // Stop the timer when the form is closed
+            updateTimer.Stop();
+        }
+
         private string GetUsername(ObjectId userId)
         {
             var user = userCollection.Find(u => u.Id == userId).FirstOrDefault();
@@ -80,7 +106,7 @@ namespace FitnessTrackers
         {
 
         }
-        
 
+        
     }
 }

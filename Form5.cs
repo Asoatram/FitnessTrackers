@@ -139,7 +139,6 @@ private void label2_Click(object sender, EventArgs e)
                     try
                     {
                         Profilepic = ImageConverter.ConvertBytesToImage(user.Profile);
-                        pictureBox1.Image = Profilepic;
                     }
                     catch (ArgumentException ex)
                     {
